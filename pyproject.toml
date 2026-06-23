@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tapo-plug"
+version = "0.1.0"
+description = "Tapo P100 priz kontrol kutuphanesi"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "tapo>=0.8.0",
+    "python-dotenv>=1.0.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+tapo-plug = "cli:main"
+
+[tool.setuptools.packages.find]
+include = ["tapo_plug*"]
