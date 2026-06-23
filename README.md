@@ -48,3 +48,5 @@ print(plug.is_on())
 pip install -e ".[dev]"
 pytest -v
 ```
+
+Entegrasyon rehberi: [INTEGRATION.md](INTEGRATION.md)
