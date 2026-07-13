@@ -8,13 +8,12 @@ $ZipName = "tapo-plug-deploy.zip"
 $ZipPath = Join-Path $ProjectRoot $ZipName
 
 Write-Host "PC-7 durumu kontrol ediliyor..."
-$statusLine = tailscale status | Select-String "desktop-cnt7"
-if ($statusLine -notmatch "active|idle") {
-    Write-Host "HATA: PC-7 ($RemoteIp) su an erisilemiyor. Tailscale: $statusLine"
-    Write-Host "PC-7 acik ve Tailscale bagli olunca tekrar calistirin:"
-    Write-Host "  powershell -ExecutionPolicy Bypass -File deploy-pc7.ps1"
+$ping = tailscale ping desktop-cnt7 2>&1 | Out-String
+if ($ping -notmatch "pong from") {
+    Write-Host "HATA: PC-7 ($RemoteIp) erisilemiyor."
     exit 1
 }
+Write-Host "PC-7 erisilebilir."
 
 Write-Host "Deploy paketi hazirlaniyor..."
 $staging = Join-Path $env:TEMP "tapo-plug-deploy"
