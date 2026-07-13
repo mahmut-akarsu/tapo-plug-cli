@@ -14,6 +14,25 @@ copy .env.example .env
 
 `.env` dosyasina priz IP, Tapo e-posta ve sifrenizi yazin.
 
+## PC-7 deploy (otomatik baslatma)
+
+Zip acildiktan sonra **bir kez** calistir:
+
+```
+kurulum.bat
+```
+
+Bu script:
+- `pip install -r requirements.txt` yapar
+- Windows acilisinda otomatik baslatma gorevi olusturur
+- API'yi hemen baslatir
+
+Uzak deploy (PC-7 acikken bu PC'den):
+
+```powershell
+powershell -ExecutionPolicy Bypass -File deploy-pc7.ps1
+```
+
 ## API (Tailscale / uzak erisim)
 
 Prizle ayni agdaki PC'de cift tikla:
