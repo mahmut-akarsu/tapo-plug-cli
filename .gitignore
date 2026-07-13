@@ -20,6 +20,9 @@ build/
 .coverage
 htmlcov/
 
+# Deploy
+*.zip
+
 # OS / editor
 .DS_Store
 Thumbs.db

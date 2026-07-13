@@ -14,6 +14,30 @@ copy .env.example .env
 
 `.env` dosyasina priz IP, Tapo e-posta ve sifrenizi yazin.
 
+## API (Tailscale / uzak erisim)
+
+Prizle ayni agdaki PC'de cift tikla:
+
+```
+baslat-api.bat
+```
+
+Veya manuel:
+
+```powershell
+.\.venv\Scripts\uvicorn api:app --host 0.0.0.0 --port 8000
+```
+
+Uzak PC'den (orn. `100.116.215.46`):
+
+```powershell
+curl -X POST http://100.107.221.118:8000/off/priz3
+curl -X POST http://100.107.221.118:8000/on/priz3
+curl http://100.107.221.118:8000/plugs
+```
+
+Veya `istek-gonder.bat` ile priz ID girip Enter'a basin.
+
 ## CLI
 
 ```powershell
