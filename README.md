@@ -41,11 +41,11 @@ Veya `istek-gonder.bat` ile priz ID girip Enter'a basin.
 ## CLI
 
 ```powershell
-python cli.py ac      # sadece ac
+python cli.py ac      # sadece ac (varsayilan / tek priz)
 python cli.py kapat   # sadece kapat
-python cli.py on
-python cli.py off
-python cli.py status
+python cli.py off priz4   # belirli priz
+python cli.py on 4        # priz4 (sayi da olur)
+python cli.py status priz1
 ```
 
 PowerShell kisayolu:
